@@ -8,7 +8,7 @@ public class Resolution {
     	while(true){
     	
         //... Input
-        String input = JOptionPane.showInputDialog(null, "What is the size of the desired screen?");
+        String input = JOptionPane.showInputDialog(null, "This Program will determine how many pixels a screen must have in order for it to be retina\nWhat is the size of the desired screen?");
         double tommer = Double.parseDouble(input);
 	
 	//... Calculate

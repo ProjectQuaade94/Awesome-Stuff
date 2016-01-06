@@ -7,7 +7,7 @@ public class GætEtTal {
 	private  static int input2;
 	private static String input1;
 	//No range above 9000!
-	private static int range = 10;
+	private static int range = 100;
 	private static int nr = (int) (Math.random() * range) + 1;
 	private static int turns = 1;
 	private static long time1;
