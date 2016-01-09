@@ -45,7 +45,6 @@ public class ILevel {
 		else{
 			JOptionPane.showMessageDialog(null, "Error, try again");
 		}
-		System.out.println(twoh);
 		int trinket1 = Integer.parseInt(JOptionPane.showInputDialog("Trinket 1: "));
 		int trinket2 = Integer.parseInt(JOptionPane.showInputDialog("Trinket 2: "));
 		int ring1 = Integer.parseInt(JOptionPane.showInputDialog("Ring 1: "));
@@ -54,18 +53,20 @@ public class ILevel {
 		int legs = Integer.parseInt(JOptionPane.showInputDialog("Legs : "));
 		int waist = Integer.parseInt(JOptionPane.showInputDialog("Waist : "));
 		int hands = Integer.parseInt(JOptionPane.showInputDialog("Hands : "));
-
+		int[] ilvl = null;
 
 		if(twoh == false){
-			int[] ilvl = {head,neck,shoulder,back,chest,wrist,wep1,wep2,trinket1,trinket2,ring1,ring2,feet,legs,waist,hands};
+			ilvl = new int[] {head,neck,shoulder,back,chest,wrist,wep1,wep2,trinket1,trinket2,ring1,ring2,feet,legs,waist,hands};
 		}
 		if(twoh == true){
-			int[] ilvl = {head,neck,shoulder,back,chest,wrist,wep1,trinket1,trinket2,ring1,ring2,feet,legs,waist,hands};
+			ilvl = new int[] {head,neck,shoulder,back,chest,wrist,wep1,trinket1,trinket2,ring1,ring2,feet,legs,waist,hands};
 		}
 
-		int avilvl = head+neck+shoulder+back+chest+wrist+wep1+wep2+trinket1+trinket2+ring1+ring2+feet+legs+waist+hands/avilvl.length;
+		int ilvlsum = head+neck+shoulder+back+chest+wrist+wep1+wep2+trinket1+trinket2+ring1+ring2+feet+legs+waist+hands;
+		int avilvl = ilvlsum/ilvl.length;
 		JOptionPane.showMessageDialog(null, "Your average ilvl is: "+avilvl);
-
+		
+		JOptionPane.showMessageDialog(null, head+neck+shoulder+back+chest+wrist+wep1+wep2+trinket1+trinket2+ring1+ring2+feet+legs+waist+hands);
+		
 	}
-
 }

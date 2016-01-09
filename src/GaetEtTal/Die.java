@@ -1,4 +1,4 @@
-package GætEtTal;
+package GaetEtTal;
 
 public class Die {
 
