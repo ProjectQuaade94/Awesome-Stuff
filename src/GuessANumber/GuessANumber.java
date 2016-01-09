@@ -4,21 +4,6 @@ import javax.swing.JOptionPane;
 
 public class GuessANumber {
 
-	//	private  static int input2;
-	//	private static String input1;
-	//	//No range above 9000!
-	//	private int range = 100;
-	//	private int nr = (int) (Math.random() * range) + 1;
-	//	private int turns = 1;
-	//	private long time1;
-	//	private long time2;
-	//	private long timeSum;
-	//	private long timeMins;
-	//	private long timeSecs;
-	//	private int response;
-	//	private String[] choices = {"Normal", "Expert", "Veteran","Impossible!"};
-
-
 	public static void main(String[] args) {
 
 		int input2 = 0;
