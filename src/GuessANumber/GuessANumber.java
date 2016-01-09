@@ -22,7 +22,7 @@ public class GuessANumber {
 		String[] choices = {"Impossible! [1-1000]", "Veteran [1-200]", "Expert [1-100]","Normal [1-10]"};
 		String difficulty = null;
 
-		JOptionPane.showMessageDialog(null,"\nWelcome to 'Guess the number' ©\n\n- Designed at created by Lars Quaade Sørensen");
+		JOptionPane.showMessageDialog(null,"\nWelcome to 'Guess the number' ©\n\n- Designed and created by Lars Quaade Sørensen");
 		
 		//Insert Name
 		while (input1==null ||input1==""||input1.length()<3){
