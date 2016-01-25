@@ -3,21 +3,21 @@ package Diablo3Calculator;
 import javax.swing.JOptionPane;
 
 public class Controller {
-	
+
 	private boolean loop = true;
 	private int response = 0;
 	private String[] choices = {"Gem Calculator", "Paragon Calculator", "Exit"};
-	
+	private String message;
+
 	GemUpgrade GU = new GemUpgrade();
 	ParagonCalculator PC = new ParagonCalculator();
 
 	public void programLoop(){
-
 		while (loop) {
-
+			message = "Welcome to Diablo 3 Calculator!\n\n- Designed and created by Lars Quaade\n\nChoose a service:";
 			response = JOptionPane.showOptionDialog(
 					null                         // Center in window.
-					, "Choose a service:"        // Message
+					, message			         // Message
 					, "Diablo 3 Calculator"      // Title in titlebar
 					, JOptionPane.YES_NO_OPTION  // Option type
 					, JOptionPane.PLAIN_MESSAGE  // messageType
@@ -25,11 +25,9 @@ public class Controller {
 					, choices                    // Button text as above.
 					, ""    // Default button's label
 					);
-
 			if (response == 0){
 				GU.gemUpgrade();
 			}
-
 			if (response == 1){
 				PC.paragonCalculator();
 			}
@@ -38,5 +36,4 @@ public class Controller {
 			}
 		}
 	}
-	
 }
