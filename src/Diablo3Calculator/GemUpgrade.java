@@ -7,7 +7,7 @@ public class GemUpgrade {
 	private int gemLevel;
 	private String input;
 	private int response = 0;
-	private String[] choices = {"Enter new Gem level", "Back"};
+	private String[] choices = {"Enter new Gem level", "Exit", "Back"};
 	private String message;
 	private String[] chance = {null,null,null,null,null,null,null,null,null,null,null,null};
 	private String chances = "";
@@ -39,11 +39,11 @@ public class GemUpgrade {
 
 		for(int i=0 ; i<11 ; i++){
 			if(negCheck[i]>0){
-				chances = chances + (chance[i]+"\n");
+				chances = chances + (chance[i]+"\n") + "Empowered cost: " + negCheck[i];
 			}
 		}
 
-		message = "\nGem Level: "+gemLevel+ "\n"+"\nNB! This is for ONE gem upgrade only (add 2 Grift levels for higher/more chances)(3 if empowered)\nYour chances for an upgrade are as follows:\n" +chances+ "\n\nEnter Gem and/or Grift level:";
+		message = "\nGem Level: "+gemLevel+ "\n"+"\nNB! This is for ONE gem upgrade only (add 2 Grift levels for higher/more chances)(3 if empowered)\nYour chances for an upgrade are as follows:\n" +chances+ "\n";
 		response = JOptionPane.showOptionDialog(
 				null                         // Center in window.
 				, message        // Message
@@ -62,9 +62,10 @@ public class GemUpgrade {
 			GU.gemUpgrade();
 		}
 		if (response == 1){
-		
+			System.exit(0);
 		}
-		
+		if (response == 2){
+		}
 	}
 }
 
