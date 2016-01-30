@@ -9,8 +9,6 @@ public class Controller {
 	private String[] choices = {"Gem Calculator", "Paragon Calculator", "Exit"};
 	private String message;
 
-	GemUpgrade GU = new GemUpgrade();
-	ParagonCalculator PC = new ParagonCalculator();
 
 	public void programLoop(){
 		while (loop) {
@@ -26,9 +24,11 @@ public class Controller {
 					, ""    // Default button's label
 					);
 			if (response == 0){
+				GemUpgrade GU = new GemUpgrade();
 				GU.gemUpgrade();
 			}
 			if (response == 1){
+				ParagonCalculator PC = new ParagonCalculator();
 				PC.paragonCalculator();
 			}
 			if (response == 2){
