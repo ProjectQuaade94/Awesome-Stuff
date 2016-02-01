@@ -11,12 +11,17 @@ public class GemUpgrade {
 	private String message;
 	private String[] chance = {null,null,null,null,null,null,null,null,null,null,null,null};
 	private String chances = "";
+	private int augment;
+	private String augmentS1 = "Augmenting an item with this gem will give you ";
+	private String augmentS2 = " Str/Dex/Int/Vit";
 
 	public void gemUpgrade(){
 		if (input == null){
 			while(gemLevel<1){
 				input = JOptionPane.showInputDialog(null, "Enter Gem level:");
 				gemLevel = Integer.parseInt(input);
+				augment = gemLevel*5;
+				augmentS1 = augmentS1 + augment + augmentS2;
 				if(gemLevel<1){
 					JOptionPane.showMessageDialog(null,"The gem must be level 1 or above!");
 				}
@@ -44,7 +49,7 @@ public class GemUpgrade {
 			}
 		}
 
-		message = "\nGem Level: "+gemLevel+ "\n"+"\nNB! This is for ONE gem upgrade only (add 2 Grift levels for higher/more chances)(3 if empowered)\nYour chances for an upgrade are as follows:\n" +chances+ "\n";
+		message = "\nGem Level: "+gemLevel+ "\n"+"\nNB! This is for ONE gem upgrade only (add 2 Grift levels for higher/more chances)(3 if empowered)\nYour chances for an upgrade are as follows:\n" +chances+ "\n"+augmentS1;
 		response = JOptionPane.showOptionDialog(
 				null                         // Center in window.
 				, message        // Message
