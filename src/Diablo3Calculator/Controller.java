@@ -1,16 +1,25 @@
 package Diablo3Calculator;
 
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 
 public class Controller {
 
 	private boolean loop = true;
 	private int response = 0;
-	private String[] choices = {"Gem Calculator", "Paragon Calculator", "Exit"};
+	private String[] choices = {"Gem Calculator", "Torment Difficulty", "Exit"};
 	private String message;
 
 
 	public void programLoop(){
+		
+		  JFrame window = new JFrame();
+	        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        window.setVisible(true);   
+		
 		while (loop) {
 			message = "Welcome to Diablo 3 Calculator!\n\n- Designed and created by Lars Quaade\n\nChoose a service:";
 			response = JOptionPane.showOptionDialog(
@@ -28,8 +37,9 @@ public class Controller {
 				GU.gemUpgrade();
 			}
 			if (response == 1){
-				ParagonCalculator PC = new ParagonCalculator();
-				PC.paragonCalculator();
+				TormentDifficulty PC = new TormentDifficulty();
+				PC.tormentDifficulty();
+
 			}
 			if (response == 2){
 				System.exit(0);

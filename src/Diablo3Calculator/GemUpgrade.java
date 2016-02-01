@@ -39,7 +39,8 @@ public class GemUpgrade {
 
 		for(int i=0 ; i<11 ; i++){
 			if(negCheck[i]>0){
-				chances = chances + (chance[i]+"\n") + "Empowered cost: " + negCheck[i];
+				chances = chances + (chance[i]+"\n");
+				
 			}
 		}
 
