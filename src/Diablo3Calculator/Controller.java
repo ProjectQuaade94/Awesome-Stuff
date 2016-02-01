@@ -10,7 +10,7 @@ public class Controller {
 
 	private boolean loop = true;
 	private int response = 0;
-	private String[] choices = {"Gem Calculator", "Torment Difficulty", "Exit"};
+	private String[] choices = {"Gem Calculator", "Torment Difficulty", "Top Builds", "Exit"};
 	private String message;
 
 
@@ -39,9 +39,12 @@ public class Controller {
 			if (response == 1){
 				TormentDifficulty PC = new TormentDifficulty();
 				PC.tormentDifficulty();
-
 			}
 			if (response == 2){
+				Builds B = new Builds();
+				B.builds();
+			}
+			if (response == 3){
 				System.exit(0);
 			}
 		}
