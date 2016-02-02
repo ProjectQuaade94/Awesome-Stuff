@@ -7,7 +7,7 @@ public class GemUpgrade {
 	private int gemLevel;
 	private String input;
 	private int response = 0;
-	private String[] choices = {"Enter new Gem level", "Exit", "Back"};
+	private String[] choices = {"Enter new Gem level", "Back"};
 	private String message;
 	private String[] chance = {null,null,null,null,null,null,null,null,null,null,null,null};
 	private String chances = "";
@@ -60,17 +60,15 @@ public class GemUpgrade {
 				, choices                    // Button text as above.
 				, ""    // Default button's label
 				);
-		ifSent();
-	}
-	public void ifSent(){
+
+        if (response == JOptionPane.CLOSED_OPTION) {
+        	System.exit(0);
+        }
 		if (response == 0){
 			GemUpgrade GU = new GemUpgrade();
 			GU.gemUpgrade();
 		}
 		if (response == 1){
-			System.exit(0);
-		}
-		if (response == 2){
 		}
 	}
 }
