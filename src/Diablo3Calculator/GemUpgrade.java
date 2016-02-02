@@ -17,13 +17,13 @@ public class GemUpgrade {
 
 	public void gemUpgrade(){
 		if (input == null){
-			while(gemLevel<1){
+			while(gemLevel<0){
 				input = JOptionPane.showInputDialog(null, "Enter Gem level:");
 				gemLevel = Integer.parseInt(input);
 				augment = gemLevel*5;
 				augmentS1 = augmentS1 + augment + augmentS2;
 				if(gemLevel<1){
-					JOptionPane.showMessageDialog(null,"The gem must be level 1 or above!");
+					JOptionPane.showMessageDialog(null,"The gem must be level 0 or above!");
 				}
 			}
 		}
