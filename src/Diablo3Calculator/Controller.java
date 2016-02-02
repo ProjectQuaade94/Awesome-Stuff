@@ -1,16 +1,13 @@
 package Diablo3Calculator;
 
-import java.awt.BorderLayout;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
 
 public class Controller {
 
 	private boolean loop = true;
 	private int response = 0;
-	private String[] choices = {"Gem Calculator", "Torment Difficulty", "Top Builds", "Exit"};
+	private String[] choices = {"Gem Calculator", "Torment Difficulty", "Top Builds", "Versions", "Exit"};
 	private String message;
 
 
@@ -45,6 +42,10 @@ public class Controller {
 				B.builds();
 			}
 			if (response == 3){
+				Versions V = new Versions();
+				V.versions();
+			}
+			if (response == 4){
 				System.exit(0);
 			}
 		}

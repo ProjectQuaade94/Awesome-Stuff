@@ -21,5 +21,4 @@ public class Builds {
 		window.setSize(1200, 220);
 		window.setVisible(true);
 	}
-	
 }
