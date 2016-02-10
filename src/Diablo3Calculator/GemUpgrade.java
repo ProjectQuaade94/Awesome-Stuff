@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class GemUpgrade {
 
-	private int gemLevel;
+	private int gemLevel = -1;
 	private String input;
 	private int response = 0;
 	private String[] choices = {"Enter new Gem level", "Back"};
