@@ -1,11 +1,12 @@
 package Diablo3Calculator;
 
 import java.awt.BorderLayout;
-import java.awt.event.WindowEvent;
+import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 
 public class TormentDifficulty {
 
@@ -27,17 +28,14 @@ public class TormentDifficulty {
 	public void tormentDifficulty(){
 		JFrame window = new JFrame();
 		JTable table = new JTable(filler, difficulty);
-		JScrollPane scrollPane = new JScrollPane(table);
-		table.setFillsViewportHeight(true);
+        table.setPreferredScrollableViewportSize(table.getPreferredSize());
+		window.pack();
+        window.setLocationRelativeTo(null);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.add(scrollPane, BorderLayout.CENTER);
 		window.setSize(1200, 220);
-		window.addWindowListener(new java.awt.event.WindowAdapter() {
-		    public void windowClosing(WindowEvent winEvt) {
-		        // Perhaps ask user if they want to save any unsaved files first.
-		        System.exit(0); 
-		    }
-		});
 		window.setVisible(true);
+		
+		
+
 	}
 }

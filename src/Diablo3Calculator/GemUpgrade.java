@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class GemUpgrade {
 
-	private int gemLevel;
+	private int gemLevel = -1;
 	private String input;
 	private int response = 0;
 	private String[] choices = {"Enter new Gem level", "Back"};
@@ -22,7 +22,7 @@ public class GemUpgrade {
 				gemLevel = Integer.parseInt(input);
 				augment = gemLevel*5;
 				augmentS1 = augmentS1 + augment + augmentS2;
-				if(gemLevel<1){
+				if(gemLevel<0){
 					JOptionPane.showMessageDialog(null,"The gem must be level 0 or above!");
 				}
 			}
@@ -43,7 +43,7 @@ public class GemUpgrade {
 		chance[10] = "\n1% at "+negCheck[10];
 
 		for(int i=0 ; i<11 ; i++){
-			if(negCheck[i]>0){
+			if(negCheck[i]>=0){
 				chances = chances + (chance[i]+"\n");
 				
 			}
