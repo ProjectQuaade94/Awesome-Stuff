@@ -1,6 +1,16 @@
 package Diablo3Calculator;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.util.Hashtable;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class Controller {
 
@@ -9,7 +19,7 @@ public class Controller {
 	private String[] choices = {"Gem Calculator", "Torment Difficulty", "Top Builds", "Versions"};
 	private String message;
 
-
+	
 	public void programLoop(){
 
 		while (loop) {
