@@ -17,7 +17,7 @@ public class Controller {
 	public void gameLoop(){
 
 		while (loop) {
-			message = "Velkommen til Aktie Spillet!\n\n- Lavet af Lars Quaade Sørensen\n\nVælg en af mulighederne:";
+			message = "Velkommen til Aktie Spillet!\n\n- Opfundet og kodet af Lars Quaade Sørensen\n\nVælg en af følgende mulighederne:";
 			response = JOptionPane.showOptionDialog(
 					null                         // Center in window.
 					, message			         // Message
@@ -37,7 +37,8 @@ public class Controller {
 				NG.newGame();
 			}
 			if (response == 1){
-				//continue game
+				ContinueGame CG = new ContinueGame();
+				CG.continueGame();
 			}
 			if (response == 2){
 				Rules R = new Rules();
