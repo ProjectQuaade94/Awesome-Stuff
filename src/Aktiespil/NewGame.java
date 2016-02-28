@@ -1,13 +1,16 @@
 package Aktiespil;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 public class NewGame {
 
-	private int response = -1;
-	private String[] choices = {"Ja", "Nej"};
-	private String message;
+	ChoicePanel CP = new ChoicePanel();
 	private boolean sikker;
+	private String message;
+	private ArrayList<String> choices;
+	private int response;
 
 	public void newGame(){
 		File F = new File();
@@ -23,21 +26,12 @@ public class NewGame {
 
 	public void sikker(){
 		if(!sikker){
-
-			message = "ADVARSEL!\n\nEr du sikker på at du vil starte et nyt spil?\n\nDu vil miste alle dine penge fra det tidligere spil!";
-			response = JOptionPane.showOptionDialog(
-					null                         // Center in window.
-					, message			         // Message
-					, "Aktie Spillet"      // Title in titlebar
-					, JOptionPane.YES_NO_OPTION  // Option type
-					, JOptionPane.PLAIN_MESSAGE  // messageType
-					, null                       // Icon (none)
-					, choices                    // Button text as above.
-					,JOptionPane.YES_OPTION  						 // Default button's label
-					);
-			if (response == JOptionPane.CLOSED_OPTION) {
-				System.exit(0);
-			}
+			
+			choices.add("Nyt Spil");
+			choices.add("FortsÃ¦t spil");
+			choices.add("Regler");
+			response = CP.choicePanel("Aktie Spillet", message, choices);
+			
 			if (response == 0){
 				sikker = true;
 				newGame();
