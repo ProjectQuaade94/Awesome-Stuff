@@ -26,13 +26,12 @@ public class TormentDifficulty {
 	private Object[][] filler = {health, damage, gold, xp, drop, dropRift, keystone, deathBreath, material, keywarden, uber};
 
 	public void tormentDifficulty(){
+
 		JFrame window = new JFrame();
 		JTable table = new JTable(filler, difficulty);
-        table.setPreferredScrollableViewportSize(table.getPreferredSize());
-		window.pack();
-        window.setLocationRelativeTo(null);
-		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setSize(1200, 220);
+		JScrollPane scrollPane = new JScrollPane(table);
+		window.add(scrollPane, BorderLayout.CENTER);
+		window.setSize(1200, 300);
 		window.setVisible(true);
 		
 		

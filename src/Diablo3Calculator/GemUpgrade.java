@@ -1,5 +1,6 @@
 package Diablo3Calculator;
 
+import java.awt.List;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -10,7 +11,7 @@ public class GemUpgrade {
 	private int response = 0;
 	private String[] choices = {"Enter new Gem level", "Back"};
 	private String message;
-	private ArrayList<String> chance = new ArrayList();
+	private String chance[];
 
 	private String chances= "";
 	private int augment;
@@ -31,21 +32,21 @@ public class GemUpgrade {
 
 		int[] negCheck = {gemLevel+10,gemLevel+9,gemLevel+8,gemLevel+7,gemLevel+6,gemLevel-1,gemLevel-2,gemLevel-3,gemLevel-4,gemLevel-5,gemLevel-6};
 
-		chance.add("\n100% at %d and above");
-		chance.add("\n90% at %d");
-//		chance[2] = "\n80% at "+negCheck[2];
-//		chance[3] = "\n70% at "+negCheck[3];
-//		chance[4] = "\n60% between levels "+gemLevel+" to "+negCheck[4];
-//		chance[5] = "\n30% at "+negCheck[5];
-//		chance[6] = "\n15% at "+negCheck[6];
-//		chance[7] = "\n8% at "+negCheck[7];
-//		chance[8] = "\n4% at "+negCheck[8];
-//		chance[9] = "\n2% at "+negCheck[9];
-//		chance[10] = "\n1% at "+negCheck[10];
+		chance[0] = "\n100% at "+negCheck[0]+" and above";
+		chance[1] = "\n90% at "+negCheck[1];
+		chance[2] = "\n80% at "+negCheck[2];
+		chance[3] = "\n70% at "+negCheck[3];
+		chance[4] = "\n60% between levels "+gemLevel+" to "+negCheck[4];
+		chance[5] = "\n30% at "+negCheck[5];
+		chance[6] = "\n15% at "+negCheck[6];
+		chance[7] = "\n8% at "+negCheck[7];
+		chance[8] = "\n4% at "+negCheck[8];
+		chance[9] = "\n2% at "+negCheck[9];
+		chance[10] = "\n1% at "+negCheck[10];
 
-		for(int i=0 ; i<chance.size() ; i++){
+		for(int i=0 ; i<chance.length ; i++){
 			if(negCheck[i]>=0){
-				chances = chances + (chance.get(i)+"\n");
+				chances = chances + (chance[i]+"\n");
 				
 			}
 		}
