@@ -1,15 +1,9 @@
 package Diablo3Calculator;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-
-import javax.swing.JFrame;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.JTextArea;
-
 public class TormentDifficulty {
-
+	
+	private GUI G = new GUI();
+	
 	private Object[] difficulty = {"Difficulty:","Normal","Hard","Expert","Master","Torment I","Torment II","Torment III","Torment IV","Torment V","Torment VI","Torment VII","Torment VIII", "Torment IX", "Torment X"};
 	private Object[] health = {"Health:","100%","200%","320%","512%","819%","1311%","2097%","3355%","5369%","8590%","18985%","41625%", "91260%", "200082%"};
 	private Object[] damage = {"Damage:","100%","130%","189%","273%","396%","575%","833%","1208%","1752%","2540%","3604%","5097%", "7208%", "10194%"};
@@ -26,15 +20,7 @@ public class TormentDifficulty {
 	private Object[][] filler = {health, damage, gold, xp, drop, dropRift, keystone, deathBreath, material, keywarden, uber};
 
 	public void tormentDifficulty(){
-
-		JFrame window = new JFrame();
-		JTable table = new JTable(filler, difficulty);
-		JScrollPane scrollPane = new JScrollPane(table);
-		window.add(scrollPane, BorderLayout.CENTER);
-		window.setSize(1200, 300);
-		window.setVisible(true);
+		G.frame(filler, difficulty, 1200, 800);
 		
-		
-
 	}
 }

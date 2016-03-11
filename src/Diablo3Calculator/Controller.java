@@ -1,60 +1,51 @@
 package Diablo3Calculator;
 
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.util.Hashtable;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
 public class Controller {
 
-	private boolean loop = true;
-	private int response = -1;
-	private String[] choices = {"Gem Calculator", "Torment Difficulty", "Top Builds", "Versions"};
 	private String message;
+	private String title;
+	private int response;
+	private String[] choices = {"Gem Calculator", "Torment Difficulty", "Top Builds", "Versions"};
 
-	
+	private GUI G;
+	private GemUpgrade GU;
+	private TormentDifficulty PC;
+	private Builds B; 
+	private Versions V;
+
+	public Controller(){
+
+		G = new GUI();
+		GU = new GemUpgrade(G);
+		PC = new TormentDifficulty();
+		B = new Builds();
+		V = new Versions();
+
+		message = "Please make a choice:";
+		title = "Diablo 3 Calculator";
+		response = G.choices(message, title, choices);
+
+	}
+
 	public void programLoop(){
 
-		while (loop) {
-			message = "Welcome to Diablo 3 Calculator!\n\n- Designed and created by Lars Quaade\n\nChoose a service:";
-			response = JOptionPane.showOptionDialog(
-					null                         // Center in window.
-					, message			         // Message
-					, "Diablo 3 Calculator"      // Title in titlebar
-					, JOptionPane.YES_NO_OPTION  // Option type
-					, JOptionPane.PLAIN_MESSAGE  // messageType
-					, null                       // Icon (none)
-					, choices                    // Button text as above.
-					,JOptionPane.YES_OPTION  						 // Default button's label
-					);
-		
-	        if (response == JOptionPane.CLOSED_OPTION) {
-	        	System.exit(0);
-	        }
-			if (response == 0){
-				GemUpgrade GU = new GemUpgrade();
-				GU.gemUpgrade();
-			}
-			if (response == 1){
-				
-				TormentDifficulty PC = new TormentDifficulty();
-				PC.tormentDifficulty();
-			}
-			if (response == 2){
-				Builds B = new Builds();
-				B.builds();
-			}
-			if (response == 3){
-				Versions V = new Versions();
-				V.versions();
-			}
+		if (response == JOptionPane.CLOSED_OPTION) {
+			System.exit(0);
+		}
+		if (response == 0){
+			GU.gemUpgrade();
+		}
+		if (response == 1){
+
+			PC.tormentDifficulty();
+		}
+		if (response == 2){
+			B.builds();
+		}
+		if (response == 3){
+			V.versions();
 		}
 	}
 }

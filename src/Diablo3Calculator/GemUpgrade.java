@@ -11,12 +11,19 @@ public class GemUpgrade {
 	private int response = 0;
 	private String[] choices = {"Enter new Gem level", "Back"};
 	private String message;
+	private String title;
 	private String chance[];
 
 	private String chances= "";
 	private int augment;
 	private String augmentS1 = "Augmenting an item with this gem will give you ";
 	private String augmentS2 = " Str/Dex/Int/Vit";
+	
+	private GUI G;
+
+	public GemUpgrade(GUI G) {
+		this.G = G;
+	}
 
 	public void gemUpgrade(){
 		if (gemLevel == -1){
@@ -51,24 +58,16 @@ public class GemUpgrade {
 			}
 		}
 
+		
+		title = "Diablo 3 Calculator";
 		message = "\nGem Level: "+gemLevel+ "\n"+"\nNB! This is for ONE gem upgrade only (add 2 Grift levels for higher/more chances)(3 if empowered)\nYour chances for an upgrade are as follows:\n" +chances+ "\n"+augmentS1;
-		response = JOptionPane.showOptionDialog(
-				null                         // Center in window.
-				, message        // Message
-				, "Diablo 3 Calculator"      // Title in titlebar
-				, JOptionPane.YES_NO_OPTION  // Option type
-				, JOptionPane.PLAIN_MESSAGE  // messageType
-				, null                       // Icon (none)
-				, choices                    // Button text as above.
-				, ""    // Default button's label
-				);
+		response = G.choices(message, title, choices);
 
         if (response == JOptionPane.CLOSED_OPTION) {
         	System.exit(0);
         }
 		if (response == 0){
-			GemUpgrade GU = new GemUpgrade();
-			GU.gemUpgrade();
+			gemUpgrade();
 		}
 		if (response == 1){
 		}
