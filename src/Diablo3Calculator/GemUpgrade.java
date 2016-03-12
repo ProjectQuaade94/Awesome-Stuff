@@ -1,18 +1,15 @@
 package Diablo3Calculator;
 
-import java.awt.List;
-import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
 
 public class GemUpgrade {
 
 	private int gemLevel = -1;
 	private int response = 0;
-	private String[] choices = {"Enter new Gem level", "Back"};
+	private String choices[] = {null,null};
 	private String message;
 	private String title;
-	private String chance[];
+	private String chance[] = {null,null,null,null,null,null,null,null,null,null,null};
 
 	private String chances= "";
 	private int augment;
@@ -60,6 +57,7 @@ public class GemUpgrade {
 
 		
 		title = "Diablo 3 Calculator";
+		choices = {"Enter new Gem level", "Back"};
 		message = "\nGem Level: "+gemLevel+ "\n"+"\nNB! This is for ONE gem upgrade only (add 2 Grift levels for higher/more chances)(3 if empowered)\nYour chances for an upgrade are as follows:\n" +chances+ "\n"+augmentS1;
 		response = G.choices(message, title, choices);
 
