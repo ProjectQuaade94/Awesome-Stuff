@@ -51,10 +51,8 @@ public class GemUpgrade {
 		for(int i=0 ; i<chance.length ; i++){
 			if(negCheck[i]>=0){
 				chances = chances + (chance[i]+"\n");
-				
 			}
 		}
-
 		
 		title = "Diablo 3 Calculator";
 		choices = {"Enter new Gem level", "Back"};
