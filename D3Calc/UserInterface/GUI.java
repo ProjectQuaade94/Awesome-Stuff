@@ -1,17 +1,13 @@
-package Diablo3Calculator;
+package UserInterface;
 
 import java.awt.BorderLayout;
-import java.util.ArrayList;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class GUI {
-	
-	private String[] choices;
-	
+		
 	public void frame(Object[][] content, Object[] top, int width, int height){
 
 		JFrame window = new JFrame();
@@ -19,12 +15,12 @@ public class GUI {
 		JScrollPane scrollPane = new JScrollPane(table);
 		window.setDefaultCloseOperation(3);
 		window.add(scrollPane, BorderLayout.CENTER);
-		window.setSize(1200, 300);
+		window.isResizable();
+		window.setSize(width, height);
 		window.setVisible(true);
 	}
 	
 	public int choices(String message,String title, String[] choices){
-		message = "Welcome to Diablo 3 Calculator!\n\n- Designed and created by Lars Quaade\n\nChoose a service:";
 		int response = JOptionPane.showOptionDialog(
 				null                         // Center in window.
 				, message			         // Message

@@ -1,10 +1,8 @@
-package Diablo3Calculator;
+package Data;
 
-public class TormentDifficulty {
-	
-	private GUI G = new GUI();
-	
-	private Object[] difficulty = {"Difficulty:","Normal","Hard","Expert","Master","Torment I","Torment II","Torment III","Torment IV","Torment V","Torment VI","Torment VII","Torment VIII", "Torment IX", "Torment X"};
+public class TormentReward {
+
+	private Object[] header = {"Difficulty:","Normal","Hard","Expert","Master","Torment I","Torment II","Torment III","Torment IV","Torment V","Torment VI","Torment VII","Torment VIII", "Torment IX", "Torment X"};
 	private Object[] health = {"Health:","100%","200%","320%","512%","819%","1311%","2097%","3355%","5369%","8590%","18985%","41625%", "91260%", "200082%"};
 	private Object[] damage = {"Damage:","100%","130%","189%","273%","396%","575%","833%","1208%","1752%","2540%","3604%","5097%", "7208%", "10194%"};
 	private Object[] gold = {"Gold Find:","0%","75%","100%","200%","300%","400%","550%","800%","1150%","1600%","1700%","1800%", "1900%", "2000%"};
@@ -16,11 +14,12 @@ public class TormentDifficulty {
 	private Object[] material = {"Material:","2","2","2","2","3","3","3","3","3","3","4","4", "4", "5"};
 	private Object[] keywarden = {"Keywarden:","-","-","-","-","25%","28%","33%","38%","43%","50%","55%","60%", "65%", "70%"};
 	private Object[] uber = {"Uber:","-","-","-","-","100%","100%+10%","100%+20%","100%+30%","100%+40%","100%+50%","200%","200%+10%", "200%+25%", "200%+50%"};
+	private Object[][] content = {health, damage, gold, xp, drop, dropRift, keystone, deathBreath, material, keywarden, uber};
 
-	private Object[][] filler = {health, damage, gold, xp, drop, dropRift, keystone, deathBreath, material, keywarden, uber};
-
-	public void tormentDifficulty(){
-		G.frame(filler, difficulty, 1200, 800);
-		
+	public Object[] getHeader(){
+		return header;
+	}
+	public Object[][] getContent(){
+		return content;
 	}
 }

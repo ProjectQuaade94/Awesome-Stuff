@@ -1,6 +1,13 @@
-package Diablo3Calculator;
+package Controller;
 
 import javax.swing.JOptionPane;
+
+import Data.Builds;
+import Data.TormentReward;
+import Data.Versions;
+import Funktionality.GemUpgrade;
+import UserInterface.GUI;
+
 
 public class Controller {
 
@@ -11,7 +18,7 @@ public class Controller {
 
 	private GUI G;
 	private GemUpgrade GU;
-	private TormentDifficulty PC;
+	private TormentReward TR;
 	private Builds B; 
 	private Versions V;
 
@@ -19,33 +26,36 @@ public class Controller {
 
 		G = new GUI();
 		GU = new GemUpgrade(G);
-		PC = new TormentDifficulty();
+		TR = new TormentReward();
 		B = new Builds();
 		V = new Versions();
-
-		message = "Please make a choice:";
-		title = "Diablo 3 Calculator";
-		response = G.choices(message, title, choices);
-
 	}
 
 	public void programLoop(){
+		
+		message = "Welcome to D3Calc (Alfa)\n\n- Designed and created by Lars Quaade\n\nChoose a service:";
+		title = "Diablo 3 Calculator";
+		response = G.choices(message, title, choices);
 
 		if (response == JOptionPane.CLOSED_OPTION) {
 			System.exit(0);
 		}
 		if (response == 0){
 			GU.gemUpgrade();
+			response = -1;
 		}
 		if (response == 1){
-
-			PC.tormentDifficulty();
+			G.frame(TR.getContent(), TR.getHeader(), 1200, 300);
+			response = -1;
 		}
 		if (response == 2){
-			B.builds();
+			G.frame(B.getContent(), B.getHeader(), 1200, 300);
+			response = -1;
 		}
 		if (response == 3){
-			V.versions();
+			String s = V.getVersion();
+			JOptionPane.showMessageDialog(null,s);
+			response = -1;
 		}
 	}
 }

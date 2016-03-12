@@ -2,22 +2,18 @@ package Aktiespil;
 
 import javax.swing.JOptionPane;
 
-import Diablo3Calculator.Builds;
-import Diablo3Calculator.GemUpgrade;
-import Diablo3Calculator.TormentDifficulty;
-import Diablo3Calculator.Versions;
 
 public class Controller {
 
 	private boolean loop = true;
 	private int response = -1;
-	private String[] choices = {"Nyt Spil", "Fortsæt fra sidste spil", "Regler"};
+	private String[] choices = {"Nyt Spil", "Fortsï¿½t fra sidste spil", "Regler"};
 	private String message;
 
 	public void gameLoop(){
 
 		while (loop) {
-			message = "Velkommen til Aktie Spillet!\n\n- Opfundet og kodet af Lars Quaade Sørensen\n\nVælg en af følgende mulighederne:";
+			message = "Velkommen til Aktie Spillet!\n\n- Opfundet og kodet af Lars Quaade Sï¿½rensen\n\nVï¿½lg en af fï¿½lgende mulighederne:";
 			response = JOptionPane.showOptionDialog(
 					null                         // Center in window.
 					, message			         // Message
