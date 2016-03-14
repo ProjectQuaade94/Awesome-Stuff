@@ -35,7 +35,7 @@ public class Controller {
 		
 		message = "Welcome to D3Calc (Alfa)\n\n- Designed and created by Lars Quaade\n\nChoose a service:";
 		title = "Diablo 3 Calculator";
-		response = G.choices(message, title, choices);
+		response = G.makeChoices(message, title, choices);
 
 		if (response == JOptionPane.CLOSED_OPTION) {
 			System.exit(0);
@@ -45,16 +45,15 @@ public class Controller {
 			response = -1;
 		}
 		if (response == 1){
-			G.frame(TR.getContent(), TR.getHeader(), 1200, 300);
+			G.makeFrame(TR.getContent(), TR.getHeader(), 1200, 300);
 			response = -1;
 		}
 		if (response == 2){
-			G.frame(B.getContent(), B.getHeader(), 1200, 300);
+			G.makeFrame(B.getContent(), B.getHeader(), 1200, 300);
 			response = -1;
 		}
 		if (response == 3){
-			String s = V.getVersion();
-			JOptionPane.showMessageDialog(null,s);
+			G.makeMessage(V.getVersion(), "Verison");
 			response = -1;
 		}
 	}

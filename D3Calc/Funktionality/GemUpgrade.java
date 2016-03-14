@@ -26,12 +26,12 @@ public class GemUpgrade {
 	public void gemUpgrade(){
 		while(gemLevel<0){
 			try{
-				gemLevel = Integer.parseInt(JOptionPane.showInputDialog(null, "Enter Gem level:"));
+				gemLevel = G.getIntInput("Enter gem level: ","GemCalc");
 			}catch(java.lang.NumberFormatException e){
-				JOptionPane.showMessageDialog(null,"Input is not a number, try again");
+				G.makeWarning("Input must be a number!","Error");
 			}
 			if(gemLevel<0 && gemLevel != -1){
-				JOptionPane.showMessageDialog(null,"The gem must be level 0 or above!");
+				G.makeWarning("The gem must be level 0 or above!","Error");
 			}
 		}
 
@@ -58,10 +58,9 @@ public class GemUpgrade {
 				chances = chances + (chance[i]+"\n");
 			}
 		}
-
-		title = "Diablo 3 Calculator";
+		title = "Gem Calculator";
 		message = "\nGem Level: "+gemLevel+ "\n"+"\nNB! This is for ONE gem upgrade only (add 2 Grift levels for higher/more chances)(3 if empowered)\nYour chances for an upgrade are as follows:\n" +chances+ "\n"+augmentS1;
-		response = G.choices(message, title, choices);
+		response = G.makeChoices(message, title, choices);
 
 		if (response == JOptionPane.CLOSED_OPTION){
 			System.exit(0);
