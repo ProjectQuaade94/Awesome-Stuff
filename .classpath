@@ -5,5 +5,8 @@
 	<classpathentry kind="src" path="Flere opgaver"/>
 	<classpathentry kind="src" path="D3Calc"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="D3Calc/chart1.png"/>
+	<classpathentry kind="lib" path="D3Calc/chart2.png"/>
+	<classpathentry kind="lib" path="D3Calc/chart3.png"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

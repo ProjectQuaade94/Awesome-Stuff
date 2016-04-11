@@ -1,14 +1,16 @@
 package Program;
 
 import Controller.Controller;
+import UserInterface.GUI;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
-		while(true){
-		Controller C = new Controller();
-		C.programLoop();
-		}
+		GUI G = new GUI();
+		G.ImageHolder();
+//		while(true){
+//		Controller C = new Controller();
+//		C.programLoop();
+//		}
 	}
 }
